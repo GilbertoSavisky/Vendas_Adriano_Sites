@@ -1,0 +1,88 @@
+inherited frm_cadastro_produtos: Tfrm_cadastro_produtos
+  Caption = 'Produtos'
+  PixelsPerInch = 96
+  TextHeight = 22
+  inherited DBGrid1: TDBGrid
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'pro_id'
+        Title.Caption = 'C'#243'd.:'
+        Width = 68
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pro_nome'
+        Title.Caption = 'Nome'
+        Width = 295
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pro_barras'
+        Title.Caption = 'C'#243'd. Barras'
+        Width = 150
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pro_ref'
+        Title.Caption = 'Refer'#234'ncia'
+        Width = 103
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pro__custo'
+        Title.Caption = 'Vl. custo'
+        Width = 81
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pro_preco'
+        Title.Caption = #192' Vista'
+        Width = 78
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pro_preco_prazo'
+        Title.Caption = #192' Prazo'
+        Width = 78
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pro_estoque'
+        Title.Caption = 'Estoque'
+        Visible = True
+      end>
+  end
+  inherited edt_pesquisa: TEdit
+    OnKeyPress = edt_pesquisaKeyPress
+  end
+  inherited fdqry_cadastro: TFDQuery
+    Active = True
+    SQL.Strings = (
+      'select * from produtos')
+    Left = 936
+    Top = 8
+    inherited fdtncfld_cadastropro_id: TFDAutoIncField
+      ReadOnly = True
+    end
+  end
+  inherited update_cadastro: TFDUpdateSQL
+    Left = 856
+    Top = 56
+  end
+  inherited trans_cadastro: TFDTransaction
+    Left = 856
+    Top = 0
+  end
+  inherited dataSource_cadastro: TDataSource
+    Left = 936
+    Top = 64
+  end
+end

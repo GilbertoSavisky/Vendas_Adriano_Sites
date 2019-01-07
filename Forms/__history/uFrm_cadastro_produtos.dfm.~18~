@@ -1,0 +1,34 @@
+inherited frm_cadastro_produtos: Tfrm_cadastro_produtos
+  Caption = 'Produtos'
+  PixelsPerInch = 96
+  TextHeight = 22
+  inherited pageControl_cadastro: TPageControl
+    inherited page_con_cadastro: TTabSheet
+      ExplicitHeight = 496
+    end
+    inherited page_con_consulta: TTabSheet
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+    end
+  end
+  inherited fdqry_cadastro: TFDQuery
+    SQL.Strings = (
+      'select * from produtos')
+    Left = 936
+    Top = 8
+  end
+  inherited update_cadastro: TFDUpdateSQL
+    Left = 856
+    Top = 56
+  end
+  inherited trans_cadastro: TFDTransaction
+    Left = 856
+    Top = 0
+  end
+  inherited dataSource_cadastro: TDataSource
+    Left = 936
+    Top = 64
+  end
+end

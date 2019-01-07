@@ -1,0 +1,50 @@
+unit uFrm_inicial;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls, Vcl.ComCtrls;
+
+type
+  Tfrm_inicial = class(TForm)
+    stat_inicial: TStatusBar;
+    pnl_inicial: TPanel;
+    btn_produtos: TSpeedButton;
+    btn_clientes: TSpeedButton;
+    btn_vendas: TSpeedButton;
+    btn_sair: TSpeedButton;
+    procedure btn_produtosClick(Sender: TObject);
+    procedure btn_sairClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_inicial: Tfrm_inicial;
+
+implementation
+
+uses
+    ufrm_Cadastro_Pai;
+
+{$R *.dfm}
+
+procedure Tfrm_inicial.btn_produtosClick(Sender: TObject);
+begin
+        if frm_cadastro_pai  = nil then
+        begin
+            frm_cadastro_pai := Tfrm_cadastro_pai.Create(Self);
+            frm_cadastro_pai.ShowModal;
+        end;
+
+end;
+
+procedure Tfrm_inicial.btn_sairClick(Sender: TObject);
+begin
+        Close;
+end;
+
+end.

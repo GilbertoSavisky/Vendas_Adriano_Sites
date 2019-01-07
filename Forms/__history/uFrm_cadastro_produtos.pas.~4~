@@ -1,0 +1,47 @@
+unit uFrm_cadastro_produtos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFrm_cadastro_pai, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  Data.DB, FireDAC.Comp.Client, FireDAC.Comp.DataSet, Vcl.Buttons, Vcl.ExtCtrls,
+  Vcl.ComCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.DBActns, System.Actions,
+  Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan;
+
+type
+  Tfrm_cadastro_produtos = class(Tfrm_cadastro_pai)
+    acMng_1: TActionManager;
+    act_primeiro: TDataSetFirst;
+    act_anteriror: TDataSetPrior;
+    act_proximo: TDataSetNext;
+    act_ultimo: TDataSetLast;
+    act_novo: TDataSetInsert;
+    act_EXCLUIR: TDataSetDelete;
+    act_editar: TDataSetEdit;
+    act_gravar: TDataSetPost;
+    act_cancelar: TDataSetCancel;
+    fdtncfld_cadastropro_id2: TFDAutoIncField;
+    strngfld_cadastropro_nome2: TStringField;
+    strngfld_cadastropro_barras2: TStringField;
+    strngfld_cadastropro_ref2: TStringField;
+    fltfld_cadastropro__custo2: TFloatField;
+    fltfld_cadastropro_preco_prazo2: TFloatField;
+    fltfld_cadastropro_preco2: TFloatField;
+    intgrfld_cadastropro_estoque2: TIntegerField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_cadastro_produtos: Tfrm_cadastro_produtos;
+
+implementation
+
+{$R *.dfm}
+
+end.
